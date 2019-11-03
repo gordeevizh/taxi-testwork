@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import './App.styles.pcss';
 import Card from '../Card';
 import Input from '../Input';
-import CarCard from '../CarCard';
+import Map from '../Map';
+import SuitableCar from '../SuitableCar';
 
 const cn = 'app'
 
@@ -15,11 +15,8 @@ const App: React.FC = () => {
         <Input 
           label={ 'Откуда: ' }
         />
-        <CarCard 
-          carName={ 'Hyundai Solaris' }
-          color={ 'Синий' }
-          distance={ 300 }
-        />
+        <SuitableCar />
+        <Map />
       </Card>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import { EInputType, IInputProps } from './Input.types';
 
+import './Input.styles.pcss';
+
 const cn = 'input'
 
 const Input: React.FunctionComponent<IInputProps> = (props: IInputProps) => {
