@@ -1,0 +1,33 @@
+.car-card {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem; 
+  width: 300px;
+
+  &__icon {
+    flex: 0 0 auto;
+    height: var(--fs-lg);
+    width: var(--fs-lg);
+  }
+
+  &__description {
+    flex: 1 1 auto;
+    margin: 0 1rem;
+  }
+
+  &__name {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__color {
+    font-size: var(--fs-xs);
+  }
+
+  &__distance {
+    font-size: var(--fs-md);
+  }
+}

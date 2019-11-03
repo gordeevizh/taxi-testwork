@@ -9,6 +9,7 @@
     "@types/node": "12.12.5",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
+    "@types/svg-sprite-loader": "^3.9.1",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
     "babel-eslint": "10.0.3",
@@ -97,7 +98,8 @@
     "postcss-custom-properties": "9.0.2",
     "postcss-nested": "4.1.2",
     "postcss-url": "8.0.0",
-    "react-hot-loader": "^4.12.15"
+    "react-hot-loader": "^4.12.15",
+    "svg-sprite-loader": "4.1.6"
   },
   "jest": {
     "roots": [
