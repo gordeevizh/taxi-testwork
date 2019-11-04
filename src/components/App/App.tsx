@@ -1,24 +1,19 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import './App.styles.pcss';
-import Card from '../Card';
-import Input from '../Input';
-import Map from '../Map';
-import SuitableCar from '../SuitableCar';
+import store from '../../store';
+import SearchTaxiCard from '../SearchTaxiCard';
+
 
 const cn = 'app'
 
-const App: React.FC = () => {
+const App: React.FunctionComponent = () => {
   return (
-    <div className={ cn }>
-      <Card>
-        <h1 className={ `${cn}-title` }>Детали заказа</h1>
-        <Input 
-          label={ 'Откуда: ' }
-        />
-        <SuitableCar />
-        <Map />
-      </Card>
-    </div>
+    <Provider store={ store() }>
+      <div className={ cn }>
+        <SearchTaxiCard />
+      </div>
+    </Provider>
   );
 }
 
