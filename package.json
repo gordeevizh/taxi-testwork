@@ -69,6 +69,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "mock": "node mock-server",
+    "dev": "node mock-server & node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -90,12 +92,13 @@
   "devDependencies": {
     "@types/webpack-env": "^1.14.1",
     "awesome-typescript-loader": "^5.2.1",
+    "express": "^4.17.1",
     "node-sass": "^4.13.0",
-    "postcss-import": "12.0.1",
-    "postcss-mixins": "6.2.3",
     "postcss-calc": "7.0.1",
     "postcss-custom-media": "7.0.8",
     "postcss-custom-properties": "9.0.2",
+    "postcss-import": "12.0.1",
+    "postcss-mixins": "6.2.3",
     "postcss-nested": "4.1.2",
     "postcss-url": "8.0.0",
     "react-hot-loader": "^4.12.15",
