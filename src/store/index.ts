@@ -5,7 +5,7 @@ import { IStore } from './store.types';
 
 const initialStatedefault: IStore = {
   address: '',
-  errors: null,
+  errors: [],
   isLoading: false,
   cars: null,
 }

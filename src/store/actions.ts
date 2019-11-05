@@ -1,5 +1,5 @@
 import { API_CARS, API_CREATE_ORDER } from '../constants/api';
-import { ERequestType, IResponse, ICar } from '../constants/types';
+import { ERequestType, IResponse, ICar, IError } from '../constants/types';
 import { EStoreActions } from './store.types';
 
 function loadData(url: string, dispatch, params?: RequestInit) {
@@ -17,7 +17,7 @@ function loadData(url: string, dispatch, params?: RequestInit) {
       }
     })
     .catch((error) => {
-      dispatch({ type: EStoreActions.SET_ERROR, payload: error });
+      setErrors([error]);
     })
 }
 
@@ -47,5 +47,11 @@ export function getCars(data) {
 export function updateAddress(address: string) {
   return (dispatch) => {
     dispatch({ type: EStoreActions.UPDATE_ADDRESS, payload: address });
+  };  
+}
+
+export function setErrors(errors: IError[]) {
+  return (dispatch) => {
+    dispatch({ type: EStoreActions.SET_ERROR, payload: errors });
   };  
 }

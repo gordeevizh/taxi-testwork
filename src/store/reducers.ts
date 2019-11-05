@@ -18,7 +18,7 @@ function isLoading(state: boolean = false, action: IStoreAction) {
   return false;
 }
 
-function errors(state: IError = null, action: IStoreAction) {
+function errors(state: IError[] = null, action: IStoreAction) {
   if (action.type === EStoreActions.SET_ERROR) {
     return action.payload;
   }

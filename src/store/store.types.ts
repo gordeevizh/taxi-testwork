@@ -9,7 +9,7 @@ export enum EStoreActions {
 
 export interface IStore {
   address: string;
-  errors: IError;
+  errors: IError[];
   isLoading: boolean;
   cars: ICar[];
 }
