@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { EInputType, IInputProps } from './Input.types';
 
 import './Input.styles.pcss';
@@ -19,6 +19,19 @@ const Input: React.FunctionComponent<IInputProps> = (props: IInputProps) => {
     onFocus,
     onKeyDown,
   } = props;
+  const [localValue, setLocalValue] = useState<string | number>(value);
+
+  useEffect(() => {
+    setLocalValue(value);
+  }, [value])
+
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocalValue(event.target.value);
+    if (onChange) {
+      onChange(event);
+    }
+  };
+
 
   return (
     <label className={ cn }>
@@ -32,9 +45,9 @@ const Input: React.FunctionComponent<IInputProps> = (props: IInputProps) => {
         disabled={ disabled }
         name={ name }
         type={ type || EInputType.text }
-        value={ value || '' }
+        value={ localValue || '' }
         onBlur={ onBlur }
-        onChange={ onChange }
+        onChange={ changeHandler }
         onFocus={ onFocus }
         onKeyDown={ onKeyDown }
       />

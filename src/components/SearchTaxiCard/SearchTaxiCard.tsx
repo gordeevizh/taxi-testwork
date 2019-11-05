@@ -6,6 +6,7 @@ import Map from '../Map';
 import SuitableCar from '../SuitableCar';
 import { IStore } from '../../store/store.types';
 import { updateAddress as updateStoreAddress, getCars } from '../../store/actions';
+import { debounce } from 'lodash';
 
 const cn = 'search-taxi-card';
 
@@ -14,14 +15,12 @@ const SearchTaxiCard: React.FunctionComponent = () => {
   const address = useSelector((state: IStore) => state.address);
 
   useEffect(() => {
-    dispatch(getCars(address));
+    dispatch(getCars(address))
   }, [address])
 
-  const updateAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault;
-
-    dispatch(updateStoreAddress(event.target.value));
-  }
+  const updateAddress = debounce((value: string) => {
+    dispatch(updateStoreAddress(value));
+  }, 1000);
 
   return (
     <Card>
@@ -29,7 +28,7 @@ const SearchTaxiCard: React.FunctionComponent = () => {
       <Input 
         label={ 'Откуда: ' }
         value={ address }
-        onChange={ updateAddress }
+        onChange={ (event: React.ChangeEvent<HTMLInputElement>) => updateAddress(event.target.value) }
       />
       <SuitableCar />
       <Map />
