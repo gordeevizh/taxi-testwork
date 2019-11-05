@@ -27,7 +27,7 @@ function getCarNumber() {
 }
 
 function getCrewsInfo() {
-  const count = getRandom(1, 10);
+  const count = getRandom(1, 6);
   const crewsInfo = [];
 
   for (let i = 0; i < count; i += 1 ) {

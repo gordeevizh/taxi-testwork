@@ -68,3 +68,9 @@ export interface ICar {
   lon: number;
   distance: number;
 }
+
+declare global {
+  interface Window {
+    ymaps: any;
+  }
+}
